@@ -29,7 +29,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = [
     'decentralized-healthcare-rpmh.onrender.com',
-    'decentralizedhealthcare-hpt7.vercel.app',  
+    'decentralized-healthcare1.vercel.app',  
     'localhost',
     '127.0.0.1',
 ]
@@ -39,7 +39,7 @@ CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
-    'https://decentralizedhealthcare-hpt7.vercel.app',  
+    'https://decentralized-healthcare1.vercel.app',  
     'https://decentralized-healthcare-rpmh.onrender.com'
 ]
 
@@ -68,8 +68,7 @@ CORS_ALLOW_HEADERS = [
 # CSRF settings to match CORS
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:5173',
-    'https://hospial-ms.vercel.app',
-    'https://hospital-ms.vercel.app',
+    'https://decentralized-healthcare1.vercel.app',
     'https://hospital-ms.onrender.com'
 ]
 
