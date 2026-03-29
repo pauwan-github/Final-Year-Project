@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-// const API_BASE = 'https://decentralized-healthcare-rpmh.onrender.com/api/';
-const API_BASE = 'http://localhost:8000/api/';
+const API_BASE = 'https://final-year-project-snpz.onrender.com/api/';
+// const API_BASE = 'http://localhost:8000/api/';
 
 const api = axios.create({
   baseURL: API_BASE,

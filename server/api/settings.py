@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-l1n+0*hs2n13@3hd0pebzer)liaqs5lhrpnp3$bo10m*dn@_rp
 DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = [
-    'decentralized-healthcare-rpmh.onrender.com',
+    'final-year-project-snpz.onrender.com',
     'decentralized-healthcare1.vercel.app',  
     'localhost',
     '127.0.0.1',
@@ -40,7 +40,7 @@ CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
     'https://decentralized-healthcare1.vercel.app',  
-    'https://decentralized-healthcare-rpmh.onrender.com'
+    'https://final-year-project-snpz.onrender.com'
 ]
 
 # Additional CORS settings for preflight requests
@@ -69,7 +69,7 @@ CORS_ALLOW_HEADERS = [
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:5173',
     'https://decentralized-healthcare1.vercel.app',
-    'https://hospital-ms.onrender.com'
+    'https://final-year-project-snpz.onrender.com',
 ]
 
 AUTH_USER_MODEL = 'hms.User'
