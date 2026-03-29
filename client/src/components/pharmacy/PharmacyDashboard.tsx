@@ -121,7 +121,7 @@ export const PharmacyDashboard: React.FC = () => {
                     {stat.title}
                   </p>
                   <p className="text-2xl font-bold text-gray-900 dark:text-white">
-                    {stat.isCurrency ? (typeof stat.value === 'number' ? stat.value.toLocaleString(undefined, { style: 'currency', currency: 'USD' }) : stat.value) : stat.value}
+                    {stat.isCurrency ? (typeof stat.value === 'number' ? stat.value.toLocaleString(undefined, { style: 'currency', currency: 'KES' }) : stat.value) : stat.value}
                   </p>
                   {stat.change && (
                     <p className="text-xs text-green-600 flex items-center">

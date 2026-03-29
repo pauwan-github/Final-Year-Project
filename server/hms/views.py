@@ -186,7 +186,7 @@ class SaleViewSet(viewsets.ModelViewSet):
         start = request.query_params.get('start_date')
         end = request.query_params.get('end_date')
         total = Sale.total_revenue(start_date=start, end_date=end)
-        return Response({"total_revenue": float(total), "currency": "$"})
+        return Response({"total_revenue": float(total), "currency": "Kshs"})
 
     @action(detail=False, methods=['get'], url_path='today_sales')
     def today_sales(self, request):
