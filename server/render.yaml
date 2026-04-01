@@ -2,10 +2,12 @@ services:
   - type: web
     name: hms-api
     runtime: python
-    buildCommand: bash build.sh
+    buildCommand: pip install --upgrade pip setuptools wheel && pip install -r requirements.txt && python manage.py migrate
     startCommand: gunicorn api.wsgi:application --bind 0.0.0.0:$PORT
     envVars:
       - key: PYTHON_VERSION
-        value: 3.11.0
+        value: 3.11.7
       - key: PYTHONUNBUFFERED
         value: "true"
+      - key: PIP_NO_BUILD_ISOLATION
+        value: "1"

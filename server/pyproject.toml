@@ -1,12 +1,3 @@
-[build-system]
-requires = ["setuptools>=68.0", "wheel"]
-build-backend = "setuptools.build_meta"
+# This file is intentionally minimal - Do not add build-system directives
+# The project uses pip + requirements.txt for dependency management
 
-[project]
-name = "hms-api"
-version = "1.0.0"
-description = "Decentralized Healthcare Management System API"
-requires-python = ">=3.9"
-
-[tool.setuptools]
-# No packages to discover, this is just for build configuration
