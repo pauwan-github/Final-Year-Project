@@ -303,58 +303,6 @@ export const Audits: React.FC = () => {
 
   return (
     <div className="p-6 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 min-h-screen">
-      {/* Header with Blockchain Status */}
-      <div className="flex items-center justify-between mb-8">
-        <div>
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-            🔗 Blockchain Audit Ledger
-          </h2>
-          <p className="text-sm text-gray-600 dark:text-gray-300">
-            Immutable medical record verification and transaction tracking
-          </p>
-        </div>
-        <div className={`px-4 py-2 rounded-lg font-semibold flex items-center gap-2 ${
-          blockchainStatus.connected 
-            ? 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200' 
-            : blockchainStatus.network === 'Network Error'
-            ? 'bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-200'
-            : 'bg-gray-100 text-gray-800 dark:bg-gray-900 dark:text-gray-200'
-        }`}>
-          <span className={`w-2 h-2 rounded-full animate-pulse ${
-            blockchainStatus.connected 
-              ? 'bg-green-600' 
-              : blockchainStatus.network === 'Network Error'
-              ? 'bg-red-600'
-              : 'bg-gray-600'
-          }`}></span>
-          {blockchainStatus.connected ? 'Blockchain Connected' : 
-           blockchainStatus.network === 'Network Error' ? 'Network Error' :
-           'Disconnected'}
-        </div>
-      </div>
-
-      {/* Blockchain Status Cards */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 border-l-4 border-blue-500">
-          <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Network</p>
-          <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{blockchainStatus.network}</p>
-          <p className="text-xs text-gray-500 dark:text-gray-400 mt-2">
-            {blockchainStatus.network?.includes('Memory') && '(In-Memory Test)'}
-            {blockchainStatus.network?.includes('Mainnet') && '(Mainnet)'}
-            {blockchainStatus.network === 'Network Error' && '(Check Server)'}
-            {blockchainStatus.network === 'Disconnected' && '(Not Available)'}
-          </p>
-        </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 border-l-4 border-purple-500">
-          <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Chain ID</p>
-          <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{blockchainStatus.chainId || '—'}</p>
-        </div>
-        <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-4 border-l-4 border-green-500">
-          <p className="text-gray-600 dark:text-gray-400 text-sm font-medium">Latest Block</p>
-          <p className="text-2xl font-bold text-gray-900 dark:text-white mt-1">{blockchainStatus.latestBlock.toLocaleString()}</p>
-        </div>
-      </div>
-
       {/* Tabs */}
       <div className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden">
         <div className="border-b border-gray-200 dark:border-gray-700">

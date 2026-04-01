@@ -29,7 +29,7 @@ DEBUG = config('DEBUG', default=False, cast=bool)
 
 ALLOWED_HOSTS = [
     'final-year-project-snpz.onrender.com',
-    'final-year-project3.vercel.app',  
+    'decentralized-healthcare-three.vercel.app',  
     'localhost',
     '127.0.0.1',
 ]
@@ -39,7 +39,7 @@ CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:5173',
-    'https://final-year-project3.vercel.app',  
+    'https://decentralized-healthcare-three.vercel.app',  
     'https://final-year-project-snpz.onrender.com'
 ]
 
@@ -68,8 +68,8 @@ CORS_ALLOW_HEADERS = [
 # CSRF settings to match CORS
 CSRF_TRUSTED_ORIGINS = [
     'http://localhost:5173',
-    'https://final-year-project3.vercel.app',
-    'https://final-year-project-snpz.onrender.com',
+    'https://hospital-ms.vercel.app',
+    'https://final-year-project-snpz.onrender.com'
 ]
 
 AUTH_USER_MODEL = 'hms.User'

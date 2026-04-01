@@ -160,6 +160,10 @@ export const useHospitalStore = create<HospitalStore>()(
             completedAt: r.completedAt ?? r.created_at ?? new Date().toISOString(),
             patientName: (r as any).patientName ?? (r as any).patient_name ?? '',
             testName: (r as any).testName ?? (r as any).test_name ?? '',
+            blockchainHash: (r as any).blockchainHash ?? (r as any).blockchain_hash ?? '',
+            blockchainTxHash: (r as any).blockchainTxHash ?? (r as any).blockchain_tx_hash ?? '',
+            blockchain_hash: (r as any).blockchain_hash ?? (r as any).blockchainHash ?? '',
+            blockchain_tx_hash: (r as any).blockchain_tx_hash ?? (r as any).blockchainTxHash ?? '',
           } as any;
         });
 
@@ -737,6 +741,10 @@ export const useHospitalStore = create<HospitalStore>()(
               id: String(r.id),
               labOrderId: r.lab_order?.id ?? r.lab_order ?? null,
               values,
+              blockchainHash: r.blockchainHash ?? r.blockchain_hash ?? '',
+              blockchainTxHash: r.blockchainTxHash ?? r.blockchain_tx_hash ?? '',
+              blockchain_hash: r.blockchain_hash ?? r.blockchainHash ?? '',
+              blockchain_tx_hash: r.blockchain_tx_hash ?? r.blockchainTxHash ?? '',
               createdAt: r.created_at ?? new Date().toISOString(),
               updatedAt: r.updated_at ?? r.updatedAt ?? new Date().toISOString(),
             } as any;

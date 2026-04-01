@@ -31,6 +31,9 @@ export interface SimplifiedLabResult {
   patientName: string | null;
   // creation timestamp from backend (ISO string)
   created_at?: string | null;
+  // blockchain integrity metadata
+  blockchainHash?: string | null;
+  blockchainTxHash?: string | null;
 }
 
 // Map a raw LabResult (server payload) to the simplified shape used by the UI.
@@ -93,6 +96,8 @@ export function simplifyLabResult(lr: LabResult): SimplifiedLabResult {
     labOrderTests: labOrderTests ?? null,
     patientName,
     created_at: (lr as any).created_at ?? (lr as any).createdAt ?? null,
+    blockchainHash: (lr as any).blockchain_hash ?? (lr as any).blockchainHash ?? null,
+    blockchainTxHash: (lr as any).blockchain_tx_hash ?? (lr as any).blockchainTxHash ?? null,
   };
 }
 
@@ -123,6 +128,25 @@ export async function createLabResult(
   labResult: LabResultCreatePayload
 ): Promise<LabResult> {
   const response = await api.post<LabResult>(`lab-results/`, labResult);
+  const created = response.data as any;
+
+  // Some backends compute blockchain fields after initial serializer output.
+  // Re-fetch once so callers can render hash metadata immediately.
+  if (
+    created &&
+    created.id != null &&
+    !created.blockchain_hash &&
+    !created.blockchainHash
+  ) {
+    try {
+      const fresh = await api.get<LabResult>(`lab-results/${created.id}/`);
+      return fresh.data;
+    } catch (e) {
+      // Fall back to original create response if follow-up fetch fails.
+      return response.data;
+    }
+  }
+
   return response.data;
 }
 
